@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuan.jobhunter.dao.JobInfoMapper">
+	 
+	 <select id="getByKeyWord" resultType="com.yuan.jobhunter.model.LieTouJobInfo">
+		select * from JobInfo
+		<where> 
+		    1=1 and
+			<if test="keyword != null">
+			 (title like  concat(concat('%',#{keyword}),'%') 
+			 or company like concat(concat('%',#{keyword}),'%') or salary like concat(concat('%',#{keyword}),'%') 
+			 or description like concat(concat('%',#{keyword}),'%')  or area like concat(concat('%',#{keyword}),'%') 
+			 or language like concat(concat('%',#{keyword}),'%') or age like concat(concat('%',#{keyword}),'%')
+			 or experience like concat(concat('%',#{keyword}),'%')  or  education like concat(concat('%',#{keyword}),'%'))
+			</if>
+			<if test="title !=null">
+			 and title like concat(concat('%',#{title}),'%')
+			</if>
+			<if test="area !=null">
+			 and area like concat(concat('%',#{area}),'%')
+			</if>
+			<if test="company !=null">
+			 and company like concat(concat('%',#{company}),'%')
+			</if>
+			<if test="education !=null">
+			 and education like concat(concat('%',#{education}),'%')
+			</if>
+			<if test="salary !=null">
+			 and salary like concat(concat('%',#{salary}),'%')
+			</if>
+		</where>
+	    limit #{start},#{size}
+	 </select>
+	 
+	 <select id="getCountByKeyWord" resultType="java.lang.Integer">
+		select count(*) from JobInfo
+		<where> 
+		    1=1 and 
+			<if test="keyword != null">	
+			 (title like  concat(concat('%',#{keyword}),'%') 
+			 or company like concat(concat('%',#{keyword}),'%') or salary like concat(concat('%',#{keyword}),'%') 
+			 or description like concat(concat('%',#{keyword}),'%')  or area like concat(concat('%',#{keyword}),'%') 
+			 or language like concat(concat('%',#{keyword}),'%') or age like concat(concat('%',#{keyword}),'%')
+			 or experience like concat(concat('%',#{keyword}),'%')  or  education like concat(concat('%',#{keyword}),'%'))
+			</if>
+			<if test="title !=null">
+			 and title like concat(concat('%',#{title}),'%')
+			</if>
+			<if test="area !=null">
+			 and area like concat(concat('%',#{area}),'%')
+			</if>
+			<if test="company !=null">
+			 and company like concat(concat('%',#{company}),'%')
+			</if>
+			<if test="education !=null">
+			 and education like concat(concat('%',#{education}),'%')
+			</if>
+			<if test="salary !=null">
+			 and salary like concat(concat('%',#{salary}),'%')
+			</if>
+		</where>
+	 </select>
+	
+</mapper>

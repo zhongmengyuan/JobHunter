@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: JobHunter
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: yuanZmy
+Implementation-Vendor-Id: com.yuan.jobhunter
+Build-Jdk: 1.8.0_101
+Implementation-URL: http://projects.spring.io/spring-boot/JobHunter/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
