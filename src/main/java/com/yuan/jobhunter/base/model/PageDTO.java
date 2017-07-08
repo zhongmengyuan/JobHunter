@@ -2,8 +2,10 @@ package com.yuan.jobhunter.base.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 用于Rest调用分页
+ * 
  * @author dengteng
  *
  * 
@@ -11,8 +13,9 @@ import java.util.List;
 public class PageDTO<T> extends ParentDTO {
 	private int count;
 	private List<T> pageList;
-	
-	public PageDTO(){}
+
+	public PageDTO() {
+	}
 
 	public PageDTO(int count, List<T> pageList) {
 		this.count = count;
@@ -36,6 +39,5 @@ public class PageDTO<T> extends ParentDTO {
 	public void setPageList(List<T> pageList) {
 		this.pageList = pageList;
 	}
-
 
 }

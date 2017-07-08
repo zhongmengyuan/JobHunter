@@ -16,7 +16,6 @@ public class Entity<T> {
 	private String msg;
 	private T data;
 
-	
 	public Entity(int code, String msg, T data) {
 		this.code = code;
 		this.msg = msg;
